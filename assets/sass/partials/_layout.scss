@@ -1,0 +1,94 @@
+.container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: 100vh;
+    //overflow: hidden;
+
+    aside {
+        grid-area: 1 / 1 / span 1 / span 1;
+    }
+
+    main {
+        grid-area: 1 / 2 / span 1 / span 1;
+        overflow: auto;
+    }
+}
+
+
+aside {
+    background-color: $color_birch;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+
+    nav {
+        width: 80%;
+        padding-top: 15%;
+
+        h1{
+            margin-top: .75rem;
+            margin-bottom: .25rem;
+            font-size: 1.7rem;
+            color: $color_light;
+            font-weight: normal;
+        }
+
+        h3 {
+            margin-top: .75rem;
+            margin-bottom: .25rem;
+            font-size: .8rem;
+            color: $color_light;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        ul {
+            @extend .menu_no_bullets;
+            color: $color_body_light;
+
+            li {
+                transition: color 250ms ease;
+
+                &.active {
+                    color: $verdePrincipal;
+                    font-weight: 600;
+                }
+
+                &:hover {
+                    color: $verdePrincipal;
+
+                    a {
+                        color: inherit;
+                    }
+                }
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding: 4rem;
+}
+
+.get_back {
+    font-style: 0.9rem;
+    color: $color_body_light;
+    margin-bottom: 2rem;
+
+    a {
+        color: inherit;
+
+        span.fa {
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+
+        }
+    }
+}
